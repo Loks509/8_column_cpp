@@ -20,6 +20,30 @@ void step(bool* Mass) {
     for (size_t i = 0; i < 8; i++)
         countOfEnabled += (enableMass[i]) ? 1 : 0;
     
+    switch (countOfEnabled)
+    {
+    case 0:
+        clickMass(enableMass, 0);
+        break;
+    case 1:
+
+        break;
+    case 2:
+        break;
+    case 3:
+        
+        break;
+    case 4:
+        break;
+    case 5:
+        break;
+    case 6:
+        break;
+    case 7:
+        break;
+    default:
+        break;
+    }
 
 }
 
@@ -80,9 +104,13 @@ int main()
                         clickMass(enableMass, i);
                     }
                 }
-                step(enableMass);
             }
             
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::Num1) {
+                    step(enableMass);
+                }
+            }
         }
 
         window.clear();
